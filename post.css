@@ -1,0 +1,28 @@
+.text-indent-20{
+padding-left: 25px;
+color: #555;
+}
+
+.mono{
+  font-family: 'Major Mono Display', monospace;
+  font-family: 'Open Sans', sans-serif;
+  color: #444;
+}
+
+.padding-top-10{
+  padding-top: 40px;
+}
+
+.code-block{
+  background-color: #fefefe;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 60%;
+  padding-left: 10px;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.sources{
+
+}
