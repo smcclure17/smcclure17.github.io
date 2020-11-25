@@ -19,8 +19,13 @@ color: #555;
   border-radius: 5px;
   width: 60%;
   padding-left: 10px;
+  /* padding-bottom: -10px; */
   color: black;
   margin-bottom: 20px;
+}
+
+pre {
+  padding-top: 10px;
 }
 
 .sources{

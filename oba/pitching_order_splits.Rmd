@@ -1,0 +1,31 @@
+---
+title: "Times through the order"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Data
+
+First and foremost, we need data. Using the *baseballr* package I pulled data from Statcast for all pitching events (hits, walks, outs etc.) from the 2019, and shortened 2020 season. These events include *a lot* of information, but we will mainly be focused on only a few variables.  
+```{r pressure, warning=FALSE}
+#include baseballr, and some genereal dependencies
+ library(dplyr)
+# library(baseballr)
+# library(tidyverse)
+# 
+# ### PULL DATA
+events_2020 <-NULL
+# dates <- seq(as.Date("2019-4-01"), as.Date("2019-09-27"), by="days")
+# for(i in 1:length(dates)){
+#   print(dates[i])
+#   day <- scrape_statcast_savant(start_date = dates[i],
+#                                         end_date = dates[i],
+#                                         playerid = NULL,
+#                                         player_type = "pitcher") %>% filter(events != 'null') #track only events, not pitches
+#   events_2020 <-rbind(events_2020,day) 
+}
+
+```

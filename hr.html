@@ -22,7 +22,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light navbar-transparent">
       <div class="center-block">
-        <a class="navbar-brand sans-serif" href="index.html" id="title">Sean McClure</a>
+        <a class="navbar-brand sans-serif" href="#" id="title"> <span id="font-block">S</span>ean <span id="font-block">M</span>cClure</a>
       </div>
     </nav>
     <div class="box ">
@@ -76,23 +76,16 @@
         <p><h3 class="serif ">The Process </h3></p>
       </div>
         <div class="flex-width serif   font-increase">
-          <p>Some code I'm going to explain: </p>
+          <p>First, we create our canvas. This sets the area in which we will be drawing and appending the pieces of the visualization.  </p>
         </div>
         <div class="code-block flex-width">
           <pre>
-<code>var hrs = d3.select("svg")
-  .selectAll("g")
-  .data(d)
-  .enter()
-  .append("g")
-  .attr("class", "hrs")
-  .attr("transform", function(d){
-      return "translate(" + (2 * d.hc_x + 50) + "," + (2 * d.hc_y + 50) + ")";
-  });</code> </pre>
+<code><&zwj;svg id="canvas" height="500px" width="605"><&zwj;/svg></code> </pre>
         </div>
 
         <div class="flex-width serif  font-increase">
-          <p>Duis autem veleum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel willum lunombro dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+          <p>Next, we begin working with our data (which I collected using <a  class="in-text-link serif" style="font-size: 0.97em;" href="https://baseballsavant.mlb.com/statcast_search">MLB's data query tool.</a>)
+          The data is formatted such that each homerun is an individual entry. Each entry includes a lot of data, however for the sake of our graphic we are only interested in the player and the coordinates (landing point) of each homerun. The CSV file can be found here.</p>
         </div>
         <div class="code-block flex-width box-shadow">
           <pre>
