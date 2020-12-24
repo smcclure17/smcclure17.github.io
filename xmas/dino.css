@@ -1,0 +1,33 @@
+.element-to-hide{
+    visibility:hidden;
+}
+
+#right{
+    position: absolute;
+    left: 65%;
+    top: 112%;
+}
+
+.slideRight {
+    visibility: visible;
+    animation-name: slideRight;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+@keyframes slideRight {
+    0% {
+        transform: translateX(-150%);
+    }
+    50% {
+        transform: translateX(28%);
+    }
+    100% {
+        transform: translateX(30%);
+    }
+}
+
+img{
+    height: 100px;
+    
+}

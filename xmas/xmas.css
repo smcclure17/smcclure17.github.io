@@ -1,0 +1,36 @@
+.hand-text{
+    font-family: 'Gaegu', cursive;
+}
+
+h1{
+    font-size: 3em;
+}
+
+.header{
+    margin-top: 30px;
+    text-align: center;
+}
+circle:hover{
+    fill: green;
+    stroke: darkgreen;
+    stroke-width: 2;
+}
+
+circle{
+    fill: red;
+}
+
+text{
+    font-family: 'Gaegu', cursive;
+    font-size: 2em;
+    color: white;
+}
+
+.bo {
+    border: 1px solid black;
+}
+
+img{
+    height: 30px
+}
+

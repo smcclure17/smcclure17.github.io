@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="dino.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="height: 900px"></div>
+<div class="animation-test element-to-hide">
+    <img src="icons/006-man.svg" alt="man">
+</div>
+<div>
+    <img id="right" src="icons/002-santa claus.svg" alt="sanaa">
+</div>
+<div style="height: 900px"></div>
+
+    <script>
+    $(window).scroll(function () {
+        var s = $(window).scrollTop(),
+        d = $(document).height(),
+        c = $(window).height();
+
+        var scrollPercent = (s / (d - c)) * 100;
+        console.log(scrollPercent)
+
+        if (scrollPercent >  50 && scrollPercent < 80) {
+            $('.animation-test').addClass("slideRight");
+        } else {
+            $('.animation-test').removeClass("slideRight");
+        }
+    });
+    </script>
+
+</body>
+</html>

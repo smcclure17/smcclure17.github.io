@@ -1,0 +1,136 @@
+<html>
+<head>
+    <title>airbnb graph</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script> -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="graph.css">
+    <link rel="stylesheet" type="text/css" href="xmas.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header"><h1 class="hand-text"> The Twelve days of Cat- (and now Dog-) mas! </h1></div> 
+    </div>
+        <div class="container">
+            <div class="text-center">
+                <svg width="800" height="500" class=''>
+                    <g>
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <script>
+      var data = [
+      {'name': "https://www.google.com", 'val': 0},
+        {'name': "https://www.google.com", 'val': 1},
+        {'name': "https://www.google.com", 'val': 2},
+        {'name': "https://www.google.com", 'val': 3},
+        {'name': "https://www.google.com", 'val': 4},
+        {'name': "https://www.google.com", 'val': 5},
+        {'name': "https://www.google.com", 'val': 6},
+        {'name': "https://www.google.com", 'val': 7},
+        {'name': "https://www.google.com", 'val': 8},
+        {'name': "https://www.google.com", 'val': 9},
+        {'name': "https://www.google.com", 'val': 10},
+        {'name': "https://www.google.com", 'val': 11},
+        {'name': "https://www.google.com", 'val': 12},
+
+      ]
+
+      var nodes = data.map(function(d) {
+        return {
+          radius: Math.random() * 20 + 40,
+          link: d.name,
+          text: d.val,
+        };
+      });
+
+      var simulation = d3
+        .forceSimulation(nodes)
+        .force('charge', d3.forceManyBody().strength(90))
+        .force('center', d3.forceCenter(400, 275))
+        .force(
+          'collision',
+          d3.forceCollide().radius(function (d) {
+            return d.radius;
+          })
+        )
+        .on('tick', ticked);
+
+      function orb() {
+        // update selection
+        let g = d3.select('svg')
+          .selectAll('g')
+          .data(nodes);
+
+        // enter selection
+        let ge = 
+          g.enter()
+          .append('g');
+        
+        // on enter append `a`
+        // around the circle
+        ge
+          .append('a')
+          .attr('href', function (d) {
+            return d.link;
+          })
+          .attr('target', '_blank')
+          .append('circle')
+          .attr('r', function (d) {
+            return d.radius;
+          });
+
+        // on enter create text element
+        // for each circle
+        ge
+          .append('text')
+          .attr('text-anchor', 'middle')
+          .text(function(d){
+            return d.text;
+          })
+
+        // merge update and enter
+        g = ge.merge(g);
+
+        // position circle
+        g
+          .selectAll('circle')
+          .attr('cx', function (d) {
+            return d.x;
+          })
+          .attr('cy', function (d) {
+            return d.y;
+          })
+
+        // position text "in" circle
+        g.selectAll('text')
+          .attr('transform', function(d){
+            return 'translate(' + d.x + ',' + d.y + ')';
+          })
+
+        g.exit().remove();
+      }
+
+      function ticked() {
+        orb();
+      }
+    </script>
+
+  <div class="header text-center" style="width: 40%; margin: auto">
+    <h2 class="hand-text"> Merry Christmas, Meghan! </h2>
+    <div class="text-right rotated"><h4 class="hand-text" style="width: 75%";> -Sean</h4></div>
+  </div> 
+  <div class="container text-center">
+    <img src="icons/040-candy cane.svg" alt="Kiwi standing on oval">
+    <img src="icons/040-candy cane.svg" alt="Kiwi standing on oval">
+    <img src="icons/040-candy cane.svg" alt="Kiwi standing on oval">
+  </div>
+</body>
+</html>
